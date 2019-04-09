@@ -26,6 +26,8 @@ namespace ITI.PrimarySchool.DAL
                              s.FirstName,
                              s.LastName,
                              s.BirthDate,
+                             s.ClassId,
+                             s.ClassName,
                              s.GitHubLogin
                       from iti.vStudent s;" );
             }
@@ -166,7 +168,7 @@ namespace ITI.PrimarySchool.DAL
                 p.Add( "@LastName", lastName );
                 p.Add( "@BirthDate", birthDate );
                 p.Add( "@GitHubLogin", gitHubLogin ?? string.Empty );
-                if (classId != 0) p.Add("@ClassId", classId);
+                p.Add("@classId", classId);
                 p.Add( "@Status", dbType: DbType.Int32, direction: ParameterDirection.ReturnValue );
                 await con.ExecuteAsync( "iti.sStudentUpdate", p, commandType: CommandType.StoredProcedure );
 

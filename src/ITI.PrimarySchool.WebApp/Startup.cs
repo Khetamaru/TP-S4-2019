@@ -35,6 +35,7 @@ namespace ITI.PrimarySchool.WebApp
             services.AddSingleton( _ => new ClassGateway( Configuration[ "ConnectionStrings:PrimarySchoolDB" ] ) );
             services.AddSingleton( _ => new StudentGateway( Configuration[ "ConnectionStrings:PrimarySchoolDB" ] ) );
             services.AddSingleton( _ => new TeacherGateway( Configuration[ "ConnectionStrings:PrimarySchoolDB" ] ) );
+            services.AddSingleton( _ => new PlanningGateway( Configuration[ "ConnectionStrings:PrimarySchoolDB" ] ) );
             services.AddSingleton<PasswordHasher>();
             services.AddSingleton<UserService>();
             services.AddSingleton<TokenService>();

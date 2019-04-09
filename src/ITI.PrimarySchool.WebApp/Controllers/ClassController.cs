@@ -27,6 +27,13 @@ namespace ITI.PrimarySchool.WebApp.Controllers
             return Ok( result );
         }
 
+        [HttpGet( "Detail" )]
+        public async Task<IActionResult> GetClassDetail() 
+        {
+            IEnumerable<ClassData> result = await _classGateway.GetDetail();
+            return Ok( result );
+        }
+
         [HttpGet( "{id}", Name = "GetClass" )]
         public async Task<IActionResult> GetClassById( int id )
         {

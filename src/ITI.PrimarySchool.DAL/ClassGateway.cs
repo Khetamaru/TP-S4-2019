@@ -28,6 +28,21 @@ namespace ITI.PrimarySchool.DAL
             }
         }
 
+        public async Task<IEnumerable<ClassData>> GetDetail()
+        {
+            using( SqlConnection con = new SqlConnection( _connectionString ) )
+            {
+                return await con.QueryAsync<ClassData>(
+                    @"select c.StudentId,
+                             c.StudentName,
+                             c.ClassId,
+                             c.ClassName,
+                             c.TeacherId,
+                             c.TeacherName
+                      from iti.vClassDetail c;" );
+            }
+        }
+
         public async Task<Result<ClassData>> FindById( int classId )
         {
             using( SqlConnection con = new SqlConnection( _connectionString ) )
@@ -38,6 +53,7 @@ namespace ITI.PrimarySchool.DAL
                              c.[Level],
                              c.TeacherId,
                              c.TeacherLastName,
+                             TeacherName = c.TeacherLastName + ' ' + c.TeacherLastName,
                              c.TeacherLastName
                         from iti.vClass c
                         where c.ClassId = @ClassId;",

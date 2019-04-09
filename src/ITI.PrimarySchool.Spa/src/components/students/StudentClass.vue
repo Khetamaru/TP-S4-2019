@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import { getStudentAsync, ClassAssignStudentAsync } from '../../api/studentApi'
+    import { getStudentAsync, classAssignStudentAsync } from '../../api/studentApi'
     import { getClassListAsync} from '../../api/classApi'
 
     export default {
@@ -65,7 +65,7 @@
 
                 try {
 
-                    await ClassAssignStudentAsync(this.item);
+                    await classAssignStudentAsync(this.item);
                     this.$router.replace('/students');
                 }
                 catch(e) {                        

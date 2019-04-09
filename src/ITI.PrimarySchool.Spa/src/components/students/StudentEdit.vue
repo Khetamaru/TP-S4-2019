@@ -74,8 +74,8 @@
 
                 if(errors.length == 0) {
                     try {
-
-                        await updateStudentAsync(this.item);
+                        if(this.mode === 'edit') await updateStudentAsync(this.item);
+                        else await createStudentAsync(this.item);
                         this.$router.replace('/students');
                     }
                     catch(e) {

@@ -31,7 +31,7 @@ begin
 	end;
 
 	update iti.tStudent
-	set FirstName = @FirstName, LastName = @LastName, BirthDate = @BirthDate, classId = @classId 
+	set FirstName = @FirstName, LastName = @LastName, BirthDate = @BirthDate, ClassId = @classId 
 	where StudentId = @StudentId;
 
 	if(@GitHubLogin <> N'')

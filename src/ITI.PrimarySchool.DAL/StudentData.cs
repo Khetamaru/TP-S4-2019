@@ -12,6 +12,10 @@ namespace ITI.PrimarySchool
 
         public DateTime BirthDate { get; set; }
 
+        public int ClassId { get; set; }
+
+        public string ClassName { get; set; }
+
         public string GitHubLogin { get; set; }
     }
 }

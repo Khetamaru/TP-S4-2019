@@ -15,7 +15,7 @@
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Date de naissance</th>
-                    <th>Numéro de Classe</th>
+                    <th>Classe</th>
                     <th>Login github</th>
                     <th>Options</th>
                 </tr>
@@ -31,7 +31,8 @@
                     <td>{{ i.lastName }}</td>
                     <td>{{ i.firstName }}</td>
                     <td>{{ new Date(i.birthDate).toLocaleDateString() }}</td>
-                    <td>{{ i.classId }}</td>
+                    <td v-if="i.className == ''">Aucune Classe</td>
+                    <td v-else>{{ i.className }}</td>
                     <td>{{ i.gitHubLogin }}</td>
                     <td>
                         <router-link :to="`students/class/${i.studentId}`">Classe</router-link>

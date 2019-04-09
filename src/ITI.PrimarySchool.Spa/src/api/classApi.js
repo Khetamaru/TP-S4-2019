@@ -11,6 +11,10 @@ export async function getClassListAsync() {
     return await getAsync(endpoint);
 }
 
+export async function getClassDetailAsync() {
+    return await getAsync(`${endpoint}/Detail`)
+}
+
 export async function getClassesWithoutTeacherAsync() {
     return await getAsync(`${endpoint}/NotAssigned`);
 }

@@ -19,7 +19,7 @@ export async function updateStudentAsync(model) {
 }
 
 export async function classAssignStudentAsync(model) {
-    return await putAsync(`${endpoint}/${model.studentId}`, model);
+    return await putAsync(`${endpoint}/assignClass/${model.studentId}`, model);
 }
 
 export async function deleteStudentAsync(studentId) {

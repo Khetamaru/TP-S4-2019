@@ -16,9 +16,9 @@
 
             <tbody>
 
-                <tr v-for="i of planningList">
+                <tr v-for="i of planningList" v-if="i.teacherId == id">
                     <td>{{ i.planningId }}</td>
-                    <td>{{ i.Date }}</td>
+                    <td>{{ new Date(i.Date ).toLocaleDateString() }}</td>
                     <td>{{ i.teacherName }}</td>
                 </tr>
             </tbody>

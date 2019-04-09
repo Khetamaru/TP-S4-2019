@@ -60,6 +60,7 @@ namespace ITI.PrimarySchool.WebApp.Controllers
             return this.CreateResult( result );
         }
 
+        [HttpPut( "assignClass/{id}" )]
         public async Task<IActionResult> ClassAssignStudentAsync(int id, [FromBody] StudentViewModel model )
         {
             Result result;

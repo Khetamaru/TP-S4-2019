@@ -29,6 +29,9 @@
                     <td>{{ i.name }}</td>
                     <td>{{ i.level }}</td>
                     <td>
+                        <router-link :to="`classes/detail/${i.classId}`">
+                            detail
+                        </router-link>
                         <router-link :to="`classes/edit/${i.classId}`">
                             <i class="fa fa-pencil"></i>
                         </router-link>
